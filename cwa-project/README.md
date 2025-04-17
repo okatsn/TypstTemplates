@@ -1,27 +1,24 @@
 # README
 
     .
-    └── cwa-project
-        ├── src
-        │   ├── template.typ
-        │   └── table3.typ
-        ├── layouts
-        ├── layouts.dvc
-        ├── .gitignore
-        ├── information
-        │   └── info.typ
-        ├── chapters
-        │   ├── apply
-        │   │   ├── brief_explain.typ
-        │   │   └── project_contents.typ
-        │   └── report
-        ├── contents
-        │   ├── abstract.typ
-        │   ├── background_survey.typ
-        │   ├── method_steps.typ
-        │   ├── gantt_plot.typ
-        │   ├── goals.typ
-        │   └── references.typ
+    ├── README.md
+    ├── apply.typ
+    ├── report.typ
+    ├── layouts
+    ├── layouts.dvc
+    ├── main.bib
+    ├── chapters
+    │   ├── apply.typ
+    │   └── report.typ
+    ├── contents
+    │   ├── background_survey.typ
+    │   ├── brief_summary.typ
+    │   ├── gantt_plot.typ
+    │   ├── goals.typ
+    │   ├── method_steps.typ
+    │   └── references.typ
+    ├── information
+    │   └── info.typ
+    └── src
         ├── apply.typ
-        ├── report.typ
-        └── main.bib
+        └── report.typ
