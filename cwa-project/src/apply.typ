@@ -79,3 +79,63 @@
     method_steps
   )
 }
+
+
+#let section_ganttchart() = {
+  table(
+    columns: (
+      4cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      1.0cm,
+      auto,
+    ), // or simply `3`
+    gutter: 0pt, // Default space between cells
+    inset: 10pt,
+    align: horizon,
+    table.cell(colspan: 14)[#layout_project_apply.subtitle[三、預定進度甘梯圖（Gantt Chart）]],
+    diagbox.bdiagbox(inset: 10pt, height: 2cm, right_outer_sep: 2pt)[工作項目][年月],
+    [第#linebreak()1#linebreak()月],
+    [第#linebreak()2#linebreak()月],
+    [第#linebreak()3#linebreak()月],
+    [第#linebreak()4#linebreak()月],
+    [第#linebreak()5#linebreak()月],
+    [第#linebreak()6#linebreak()月],
+    [第#linebreak()7#linebreak()月],
+    [第#linebreak()8#linebreak()月],
+    [第#linebreak()9#linebreak()月],
+    [第#linebreak()10#linebreak()月],
+    [第#linebreak()11#linebreak()月],
+    [第#linebreak() (期末)#linebreak()月],
+    [備註],
+    [],
+    [■], [■], [], [], [], [], [], [], [], [], [], [], [],
+    [],
+    [], [■], [■], [], [], [], [], [], [], [], [], [], [],
+    [],
+    [], [], [■], [■], [], [], [], [], [], [], [], [], [],
+    [],
+    [], [], [], [■], [■], [], [], [], [], [], [], [], [],
+    [],
+    [], [], [], [], [■], [■], [■], [], [], [], [], [], [],
+    [],
+    [], [], [], [], [], [], [■], [■], [■], [], [], [], [],
+    [],
+    [], [], [], [], [], [], [], [], [■], [■], [■], [], [],
+    [],
+    [], [], [], [], [], [], [], [], [], [], [■], [■], [■],
+    [],
+    [], [], [], [], [], [], [], [], [], [], [], [], [],
+    [],
+    [], [], [], [], [], [], [], [], [], [], [], [], [],
+  )
+}
