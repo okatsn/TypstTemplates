@@ -31,7 +31,7 @@
   #doc
 ]
 
-#let abssec(abs_zh, abs_en) = {
+#let abstract_section(abs_zh, abs_en) = {
   table(
     columns: 1fr, // or simply `3`
     gutter: 0pt, // Default space between cells

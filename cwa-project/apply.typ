@@ -2,4 +2,4 @@
 #import "chapters/apply.typ" as chapters
 #show: src.template
 
-#src.abssec(chapters.abstract_zh, chapters.abstract_en)
+#src.abstract_section(chapters.abstract_zh, chapters.abstract_en)
