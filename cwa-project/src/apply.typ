@@ -31,7 +31,7 @@
   #doc
 ]
 
-#let abstract_section(abs_zh, abs_en) = {
+#let section_abstract(abs_zh, abs_en) = {
   table(
     columns: 1fr, // or simply `3`
     gutter: 0pt, // Default space between cells
@@ -45,5 +45,21 @@
     [
       #abs_en
     ]
+  )
+}
+
+#let section_content(background, method_steps) = {
+  table(
+    columns: 1fr, // or simply `3`
+    gutter: 0pt, // Default space between cells
+    inset: 10pt,
+    align: horizon,
+    [#subtitle[一、背景分析：] (簡述本研究計畫之目的、重要性以及國內外有關本計畫之研究情況。)],
+
+    background,
+
+    [#subtitle[二、研究方法及進行步驟：] (其中研究方法請詳細說明(1)採用之方法(2)採用本方法之原因(3)預計可能遭遇之困難及解決途徑(4)重要儀器之配合使用情形。)],
+
+    method_steps
   )
 }
