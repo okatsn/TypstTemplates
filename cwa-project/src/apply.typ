@@ -3,7 +3,8 @@
 #let template(doc) = [
   #set text(
     // Set main text: https://typst.app/docs/reference/text/text/
-    font: "Noto Serif CJK TC",
+    // font: "Noto Serif CJK TC",
+    font: "AR PL UKai TW",
     size: 12pt,
   )
 
