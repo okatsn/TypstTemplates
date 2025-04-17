@@ -1,4 +1,9 @@
-#let subtitle(x) = text(size: 14pt, weight: "bold", x)
+#let subtitle(x) = text(
+  size: 14pt,
+  //   weight: "bold",
+  stroke: 0.2pt, // Very slight stroke to simulate "boldness"
+  x,
+)
 
 #let template(doc) = [
   #set text(
