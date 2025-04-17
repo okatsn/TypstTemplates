@@ -16,14 +16,12 @@
         │   │   └── project_contents.typ
         │   └── report
         ├── contents
-        │   ├── apply
-        │   │   ├── abstract.typ
-        │   │   ├── background_survey.typ
-        │   │   ├── method_steps.typ
-        │   │   ├── gantt_plot.typ
-        │   │   ├── goals.typ
-        │   │   └── references.typ
-        │   └── report
+        │   ├── abstract.typ
+        │   ├── background_survey.typ
+        │   ├── method_steps.typ
+        │   ├── gantt_plot.typ
+        │   ├── goals.typ
+        │   └── references.typ
         ├── apply.typ
         ├── report.typ
         └── main.bib
