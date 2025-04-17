@@ -1,0 +1,6 @@
+{
+    "devcontainer_name": "TypstTemplates",
+    "service": "typtempl",
+    "image": "typtempl-img",
+    "docker_compose_name": "typst-templates"
+}
