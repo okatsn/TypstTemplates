@@ -13,3 +13,5 @@
 = 參、計畫內容
 
 #src.section_content(chapters.background, chapters.method_steps)
+
+#src.section_ganttchart()

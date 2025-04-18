@@ -1,3 +1,5 @@
+#import "diagbox.typ"
+
 #let subtitle(x) = text(
   size: 14pt,
   //   weight: "bold",
