@@ -1,6 +1,6 @@
 # README
 
-Here is the structure of this template:
+## The structure of this template:
 
     .
     ├── README.md
@@ -36,3 +36,15 @@ Here are some keynotes and the logic behind this template:
 - Main document (`./apply.typ` or `./report.typ`) imports `chapters` and `information` materials, but no `contents/*`.
 - Chapter documents (`chapters/*`) import `contents/*`, and may import `src/*` only when necessary.
 - Contents (`contents/*`) should include no `src/*`, any formatting, layout or custom function. Let contents as pure text contents as possible **EXCEPT** figures, equations and citations.
+
+
+## Compile and combine
+
+There is no need to build the template for every page in typst from ground zero. 
+Some pages may change year-by-year or require modifications in administrative procedures.
+Thus, there is no need to write them in typst. Please manage these documents by `dvc` (you have to convert them from WORD to PDF manually).
+
+The `dvc.yaml` is responsible for compile and combine the documents in order to export our final product for later procedures.
+See `deps` for what you should prepare as static pdf; if any of them had been changed by others, you have to export corresponding documents as dependencies, and then `dvc repro`.
+
+After `dvc repro`, you may need to manually convert the final pdf to WORD, because they accept only WORD.
