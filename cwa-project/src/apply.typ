@@ -15,14 +15,14 @@
     size: 12pt,
   )
 
+  // Set page: https://typst.app/docs/reference/layout/page/
   #set page(
-    // Set page: https://typst.app/docs/reference/layout/page/
     paper: "a4",
     margin: (top: 1.75cm, bottom: 2.54cm, left: 1.9cm, right: 1.9cm),
-    header: align(right)[
-      交通部中央氣象署委託研究計畫申請書
-    ],
     numbering: "1", // numbering the page
+    header: align(right)[
+      // 交通部中央氣象署委託研究計畫申請書
+    ], // small title on top of every page
   )
 
   #set par(
