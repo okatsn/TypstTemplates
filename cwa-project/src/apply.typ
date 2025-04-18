@@ -142,20 +142,20 @@
 
   table(
     columns: (
-      4cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      1.0cm,
-      auto,
+      4.0cm, // First column for work items (was 4cm)
+      0.93cm, // Month columns with equal sizing
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      0.93cm,
+      1fr, // Last column for notes. Set with `*fr` to fit the table to page width.
     ),
     gutter: 0pt,
     inset: 10pt,
