@@ -102,6 +102,8 @@
   return cells
 }
 
+#let sz10c(x) = align(center)[#text(size: 10pt, x)]
+
 #let section_ganttchart(tasks) = {
   // Header row
   let rows = (
@@ -152,6 +154,10 @@
     gutter: 0pt,
     inset: 10pt,
     align: horizon,
-    ..rows.flatten()
+    ..rows.flatten(),
+    // last rows
+    sz10c[工作進度估計百分比（累積數）],
+    [8%], [17%], [25%], [33%], [50%], [54%], [58%], [64%], [75%], [83%], [91%], [100%],
+    [], [], [], [], [], [], [], [], [], [], [], [], [],
   )
 }
