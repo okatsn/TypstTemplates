@@ -1,4 +1,4 @@
-#import "../information/project.typ" as info_project
+#import "../information/config.typ" as info_project
 
 #let template(doc) = [
   #set text(
