@@ -49,13 +49,22 @@
   #doc
 ]
 
+
+// Common functions
+
+#let sz10(x) = text(size: 10pt, x)
+#let sz10c(x) = align(center)[#text(size: 10pt, x)]
+#let sz11t(x) = align(top)[#text(size: 11pt, x)]
+
+// Sections:
+
 #let section_abstract(abs_zh, abs_en) = {
   table(
     columns: 1fr, // or simply `3`
     gutter: 0pt, // Default space between cells
     inset: 10pt,
     align: horizon,
-    [#subtitle[一、中文計畫摘要：] (請就全部計畫要點作一概述，以300字為限)],
+    [#subtitle[一、中文計畫摘要：] #sz10[(請就全部計畫要點作一概述，以300字為限)]],
     [
       #abs_zh
     ],
@@ -72,11 +81,11 @@
     gutter: 0pt, // Default space between cells
     inset: 10pt,
     align: horizon,
-    [#subtitle[一、背景分析：] (簡述本研究計畫之目的、重要性以及國內外有關本計畫之研究情況。)],
+    [#subtitle[一、背景分析：] #sz10[(簡述本研究計畫之目的、重要性以及國內外有關本計畫之研究情況。)]],
 
     background,
 
-    [#subtitle[二、研究方法及進行步驟：] (其中研究方法請詳細說明(1)採用之方法(2)採用本方法之原因(3)預計可能遭遇之困難及解決途徑(4)重要儀器之配合使用情形。)],
+    [#subtitle[二、研究方法及進行步驟：] #sz10[(其中研究方法請詳細說明(1)採用之方法(2)採用本方法之原因(3)預計可能遭遇之困難及解決途徑(4)重要儀器之配合使用情形。)]],
 
     method_steps
   )
@@ -105,8 +114,6 @@
 
 // Functions specifically for Typst
 
-#let sz10c(x) = align(center)[#text(size: 10pt, x)]
-#let sz11t(x) = align(top)[#text(size: 11pt, x)]
 #let r90(q) = rotate(90deg, reflow: false, origin: center + horizon)[#q]
 #let qr90(x) = [
   #v(-10pt) // Make "(" closer to "第"
@@ -229,9 +236,9 @@
     gutter: 0pt, // Default space between cells
     inset: 10pt,
     align: horizon,
-    [#subtitle[四、預期成果、效益及其應用] (請先列述在執行期限內預期完成之工作項目及具體成果，若分年進行，得分年列述。並請按計畫性質在研究成果方面酌加說明：(1)對於有關之交通建設，預期可獲得何項效益？(2)對於學術理論系統之建立有何貢獻？)],
+    [#subtitle[四、預期成果、效益及其應用] #sz10[(請先列述在執行期限內預期完成之工作項目及具體成果，若分年進行，得分年列述。並請按計畫性質在研究成果方面酌加說明：(1)對於有關之交通建設，預期可獲得何項效益？(2)對於學術理論系統之建立有何貢獻？)]],
     expectedResults,
-    [#subtitle[五、重要有關文獻] (請依次填寫本計畫所參考之重要文獻：包括參考書名稱、作者、出版社、出版日期、出版地點、或論文發表之作者、雜誌名稱、期別、日期與有關頁次等。)],
+    [#subtitle[五、重要有關文獻] #sz10[(請依次填寫本計畫所參考之重要文獻：包括參考書名稱、作者、出版社、出版日期、出版地點、或論文發表之作者、雜誌名稱、期別、日期與有關頁次等。)]],
     // This cannot be empty if any of the entry was cited.
     references
   )
