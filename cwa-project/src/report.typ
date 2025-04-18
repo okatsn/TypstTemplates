@@ -1,3 +1,5 @@
+#import "../information/project.typ" as info_project
+
 #let template(doc) = [
   #set text(
     // Set main text: https://typst.app/docs/reference/text/text/
@@ -20,6 +22,7 @@
     // Set paragraph: https://typst.app/docs/reference/layout/par/
     justify: true, // Hyphenation will be enabled for justified paragraphs
     leading: 0.52em, // The spacing between lines
+    first-line-indent: 2em,
   )
 
   // #set heading(numbering: "1.a.") // Numbering heading: https://typst.app/docs/reference/model/heading/
@@ -30,14 +33,19 @@
   #doc
 ]
 
-#let abstract() = [
+#let txt18bc(x) = align(
+  center,
+  text(size: 18pt, stroke: 0.3pt, x),
+)
 
-  #align(
-    center,
-    text(size: 18pt, stroke: 0.3pt)[
-      主標題—子題
-    ],
-  )
+#let abstract(
+  content_zh,
+  content_en,
+  keywords_zh: info_project.keywords_zh,
+  keywords_en: info_project.keywords_en,
+) = [
+
+  #txt18bc[主標題—子題]
 
   #align(
     center,
@@ -49,4 +57,15 @@
     ],
   )
 
+  #txt18bc[摘要]
+
+  #content_zh
+
+  關鍵字：#keywords_zh
+
+  #txt18bc[Abstract]
+
+  #content_en
+
+  keyword：#keywords_en
 ]
