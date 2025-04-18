@@ -29,3 +29,24 @@
 
   #doc
 ]
+
+#let abstract() = [
+
+  #align(
+    center,
+    text(size: 18pt, stroke: 0.3pt)[
+      主標題—子題
+    ],
+  )
+
+  #align(
+    center,
+    text(stroke: 0.2pt)[
+      作者1 作者2
+      #linebreak()
+      國立中央大學地球科學系
+
+    ],
+  )
+
+]
