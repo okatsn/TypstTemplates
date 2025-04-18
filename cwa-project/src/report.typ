@@ -53,7 +53,7 @@
     text(stroke: 0.2pt)[
       #info.authors.join(" ")
       #linebreak()
-      國立中央大學地球科學系
+      #info.department
 
     ],
   )
