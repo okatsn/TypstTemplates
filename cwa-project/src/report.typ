@@ -1,4 +1,4 @@
-#import "../information/config.typ" as info_project
+#import "../information/config.typ" as info
 
 #let template(doc) = [
   #set text(
@@ -41,16 +41,17 @@
 #let abstract(
   content_zh,
   content_en,
-  keywords_zh: info_project.keywords_zh,
-  keywords_en: info_project.keywords_en,
+  keywords_zh: info.keywords_zh,
+  keywords_en: info.keywords_en,
+  title_zh: info.title_zh,
 ) = [
 
-  #txt18bc[主標題—子題]
+  #txt18bc[#title_zh]
 
   #align(
     center,
     text(stroke: 0.2pt)[
-      作者1 作者2
+      #info.authors.join(" ")
       #linebreak()
       國立中央大學地球科學系
 
@@ -61,11 +62,11 @@
 
   #content_zh
 
-  關鍵字：#keywords_zh
+  關鍵字：#keywords_zh.join("、")
 
   #txt18bc[Abstract]
 
   #content_en
 
-  keyword：#keywords_en
+  keyword：#keywords_en.join(", ")
 ]
