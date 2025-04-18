@@ -1,0 +1,15 @@
+stages:
+  # Compile and combine `apply` documents:
+  compile_apply:
+    cmd: . compile_apply.sh
+    deps:
+      - apply_preface.pdf
+      - apply_appendix.pdf
+    outs:
+      - project_plan.pdf
+  combine_apply:
+    cmd: . combine_apply.sh
+    deps:
+      - project_plan.pdf
+    outs:
+      - project_plan_combined.pdf
