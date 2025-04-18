@@ -84,7 +84,7 @@
 
 // Gantt chart
 
-#let gantt_row(work_name, months) = {
+#let gantt_row(work_name, months, note: "") = {
   let cells = ([#work_name],)
 
   // Create 12 month cells with ■ if the month is in the months array
@@ -96,8 +96,8 @@
     }
   }
 
-  // Add the empty note cell
-  cells.push([])
+  // Add the note cell with the provided content
+  cells.push([#note])
 
   return cells
 }
@@ -131,8 +131,13 @@
 
   // Add task rows
   for task in tasks {
-    let (name, months) = task
-    rows.push(gantt_row(name, months))
+    if task.len() == 2 {
+      let (name, months) = task
+      rows.push(gantt_row(name, months))
+    } else if task.len() == 3 {
+      let (name, months, note) = task
+      rows.push(gantt_row(name, months, note: note))
+    }
   }
 
   table(
