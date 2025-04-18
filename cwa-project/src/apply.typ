@@ -102,8 +102,24 @@
   return cells
 }
 
+
+// Functions specifically for Typst
+
 #let sz10c(x) = align(center)[#text(size: 10pt, x)]
 #let sz11t(x) = align(top)[#text(size: 11pt, x)]
+#let r90(q) = rotate(90deg, reflow: false, origin: center + horizon)[#q]
+#let qr90(x) = [
+  #v(-10pt) // Make "(" closer to "第"
+  #r90[(]
+  #v(-7pt) // Make "(" closer to "期"
+  #text(top-edge: 4pt)[#x] // top-edge makes "期" "末" closer to each other.
+  #v(-7pt) // Make ")" closer to "末"
+  #r90[)]
+  #v(-10pt) // Make ")" closer to "月"
+]
+#let sz9qr90(x) = text(size: 7pt)[#qr90(x)]
+
+
 
 #let section_ganttchart(tasks) = {
   // Header row
@@ -125,7 +141,7 @@
         [第#linebreak()9#linebreak()月],
         [第#linebreak()10#linebreak()月],
         [第#linebreak()11#linebreak()月],
-        [第#linebreak() (期末)#linebreak()月],
+        [第 #sz9qr90[期 #linebreak() 末] 月],
       ).map(v => sz10c(v)),
       [備註],
     ),
