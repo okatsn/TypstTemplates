@@ -219,3 +219,20 @@
     ]
   )
 }
+
+
+// Final section
+
+#let section_resultrefs(expectedResults, references) = {
+  table(
+    columns: 1fr, // or simply `3`
+    gutter: 0pt, // Default space between cells
+    inset: 10pt,
+    align: horizon,
+    [#subtitle[四、預期成果、效益及其應用] (請先列述在執行期限內預期完成之工作項目及具體成果，若分年進行，得分年列述。並請按計畫性質在研究成果方面酌加說明：(1)對於有關之交通建設，預期可獲得何項效益？(2)對於學術理論系統之建立有何貢獻？)],
+    expectedResults,
+    [#subtitle[五、重要有關文獻] (請依次填寫本計畫所參考之重要文獻：包括參考書名稱、作者、出版社、出版日期、出版地點、或論文發表之作者、雜誌名稱、期別、日期與有關頁次等。)],
+    // This cannot be empty if any of the entry was cited.
+    references
+  )
+}

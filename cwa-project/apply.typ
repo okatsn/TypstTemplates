@@ -14,6 +14,8 @@
 
 #src.section_content(chapters.background, chapters.method_steps)
 
+#colbreak()
+
 #src.section_ganttchart((
   ([work 1 status], (1, 2)),
   ([work 2 status], (2, 3)),
@@ -24,3 +26,7 @@
   ([work 7 status], (9, 10, 11)),
   ([work 8 status], (11, 12)),
 ))
+
+#colbreak()
+
+#src.section_resultrefs(chapters.expected_results, chapters.references)

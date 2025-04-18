@@ -20,3 +20,13 @@
 #let method_steps = [
   方法及步驟。
 ]
+
+#let expected_results = [
+  預期結果@exampleArticle。
+]
+
+#let references = bibliography(
+  "../main.bib",
+  title: none,
+  style: "council-of-science-editors",
+) // ../ieee-withnote.csl
