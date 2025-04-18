@@ -25,6 +25,26 @@
     first-line-indent: 2em,
   )
 
+  #show heading.where(level: 2): it => [
+    // Set top-level headers.
+    #text(
+      size: 16pt, // Larger size for emphasis
+      fill: rgb(0, 0, 0), // Pure black for stronger appearance
+      stroke: 0.3pt, // Very slight stroke to simulate "boldness"
+      // This is a hack since no available weight variant for `font: "AR PL UKai TW",`.
+    )[#it]
+  ]
+
+  #show heading.where(level: 3): it => [
+    // Set top-level headers.
+    #text(
+      size: 14pt, // Larger size for emphasis
+      fill: rgb(0, 0, 0), // Pure black for stronger appearance
+      stroke: 0.2pt, // Very slight stroke to simulate "boldness"
+      // This is a hack since no available weight variant for `font: "AR PL UKai TW",`.
+    )[#it]
+  ]
+
   // #set heading(numbering: "1.a.") // Numbering heading: https://typst.app/docs/reference/model/heading/
 
   // https://typst.app/docs/tutorial/advanced-styling/
@@ -70,3 +90,4 @@
 
   keyword：#keywords_en.join(", ")
 ]
+
