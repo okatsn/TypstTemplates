@@ -104,7 +104,7 @@
     gutter: 0pt, // Default space between cells
     inset: 10pt,
     align: horizon,
-    table.cell(colspan: 14)[#layout_project_apply.subtitle[三、預定進度甘梯圖（Gantt Chart）]],
+    table.cell(colspan: 14)[#subtitle[三、預定進度甘梯圖（Gantt Chart）]],
     diagbox.bdiagbox(inset: 10pt, height: 2cm, right_outer_sep: 2pt)[工作項目][年月],
     [第#linebreak()1#linebreak()月],
     [第#linebreak()2#linebreak()月],
