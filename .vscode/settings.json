@@ -23,4 +23,8 @@
         "internal-terms": false // Disable the `internal-terms` dictionary
     }, // This prevents cSpell to highlight words already added to LTeX's dictionary.
     "ltex.additionalRules.motherTongue": "en-US",
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#20dacf",
+        "titleBar.inactiveBackground": "#20dacf",
+    },
 }
