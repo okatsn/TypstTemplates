@@ -50,8 +50,8 @@ fi
 link_name="$pkgver"
 link_path="$(pwd)/$link_name"
 
-rm -rv link_path
+rm -rv $link_path
 echo "Symlink uninstalled: $link_path"
-rm -rv target_path
+rm -rv $target_path
 echo "Source uninstalled: $target_path"
 
