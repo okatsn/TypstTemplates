@@ -51,5 +51,22 @@ echo "   to $target_path"
 # It's lightweight and perfect for installing packages.
 npx degit "$THEME_REPO#$pkgver" "$target_path"
 
+# Verify we're in the expected project directory before creating a link.
+# The script previously used `ln -s "$target_path" $(pwd)` which relies on
+# being in the project root and creates a link named after the basename of
+# the target. Make this explicit and safer by checking for required files and
+# handling existing links.
+if [ ! -d "src" ] || [ ! -d "chapters" ] || [ ! -f "config.typ" ]; then
+  echo "Error: current directory $(pwd) does not appear to be a project root." >&2
+  echo "It must contain: src/, chapters/, and config.typ" >&2
+  exit 1
+fi
+
+link_name="$pkgver"
+link_path="$(pwd)/$link_name"
+
+ln -s "$target_path" "$link_path"
+echo "Created symlink: $link_path -> $target_path"
+
 echo "✨ Success! You can now use the theme in your project with:"
 echo "   #import \"@local/$THEME_NAMESPACE:$pkgver\": *"
