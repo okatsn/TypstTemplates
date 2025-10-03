@@ -19,11 +19,11 @@
 
 #let self-info = config-info(
   // KEYNOTE: This is `self.info` in the `...theme.with()` that you can refer.
-  title: [#config.common-info.title_zh],
-  subtitle: [#config.common-info.title_en],
+  title: [#config.common-info.title],
+  subtitle: [#config.common-info.subtitle],
   authors: config.common-info.authors,
   author: [#config.common-info.authors.join(" ")],
-  short-title: [#config.common-info.short-title_zh], // if there is no "short-title", "title" will be presented at the bottom-left footer (`footer-c`) of the stargaze slide.
+  short-title: [#config.common-info.shorttitle], // if there is no "short-title", "title" will be presented at the bottom-left footer (`footer-c`) of the stargaze slide.
   // date: datetime.today(),
   date: if config.slide-info.presenting-date == none { datetime.today() } else { config.slide-info.presenting-date },
   institution: [#config.common-info.department],
