@@ -22,47 +22,47 @@
     endyear: 2025,
     events: (
       event(
-        title: "MagTIP 演算法",
+        title: "MagTIP Algorithm",
         year: 2019,
       ),
       event(
-        title: "MagTIP 機率預報模式",
+        title: "MagTIP Probabilistic Forecasting Mode",
         year: 2020,
       ),
       event(
-        title: "多變量 MagTIP 演算法",
+        title: "Multivariate MagTIP Algorithm",
         year: 2021,
       ),
       event(
-        title: "GEMS-MagTIP 系統整合",
+        title: "GEMS-MagTIP System Integration",
         year: 2022,
       ),
       event(
-        title: "濾波頻段影響研究",
+        title: "Study of Filter Band Effects",
         year: 2023,
       ),
       event(
-        title: "整合資訊理論",
+        title: "Integration of Information Theory",
         year: 2024,
       ),
     ),
     eventspans: (
       eventspan(
-        title: strong[GEMSTIP 演算法],
+        title: strong[GEMSTIP Algorithm],
         start-point: 2016,
         end-point: 2018,
         color: theme-color-configuration.colors.primary,
         box-width: evtbxwidth,
       ),
       eventspan(
-        title: strong[MagTIP 發展期],
+        title: strong[MagTIP Development Phase],
         start-point: 2019,
         end-point: 2022,
         color: theme-color-configuration.colors.quaternary-light,
         box-width: evtbxwidth,
       ),
       eventspan(
-        title: strong[系統整合與分析期],
+        title: strong[System Integration and Analysis Phase],
         start-point: 2022,
         end-point: 2025,
         color: theme-color-configuration.colors.secondary,
@@ -86,51 +86,51 @@
     columns: (1fr, 0.8fr),
     gutter: 1em,
     [
-      *測站中心導向的限制*
-      - 單一測站代表整個 $R_C$ 範圍
-      - 空間預報不均
-      - 網格搜尋計算瓶頸
-      - 測站覆蓋盲區
+      *Station-centered limitations*
+      - A single station representing the whole $R_C$ range
+      - Uneven spatial forecasting
+      - Computational bottleneck of grid search
+      - Station coverage blind spots
     ],
     [
-      *網格中心導向的優勢*
-      - 多站資料整合至單一網格單元
-      - 空間上均勻且精細的TIP預報
+      *Grid-centered advantages*
+      - Integration of multiple stations' data into a single grid cell
+      - Spatially uniform and fine-grained TIP forecasts
     ],
   )
 
-  #simple-rect(subtitle: [決策樹演算法：可解釋、易擴充、高效率的最佳化])[
+  #simple-rect(subtitle: [DT-algorithm: Interpretable, extensible and efficient])[
     #set text(weight: "bold", size: 1.1em)
-    計畫導入決策樹演算法實現高效率的格點預報
+    The project introduces decision-tree algorithms to achieve efficient grid forecasting
   ]
 
 ][
   #set text(size: 0.7em)
 
   #let items = (
-    text()[缺失值與異常值的處理],
-    text()[自相關分析：ACF/PACF 分析時間相依結構],
-    text()[識別地電磁指標樣態 #right-arrow-c #hlc[特徵工程指引]],
-    text(fill: gray)[發展降維技術解決特徵共線性問題],
+    text()[Handling missing values and outliers],
+    text()[ACF/PACF analysis],
+    text()[GM indicator #right-arrow-c #hlc[Feature engineering]],
+    text(fill: gray)[Dimensionality reduction],
   )
   #let items_next = (
-    text(fill: gray)[特徵重要性分析],
-    text(fill: gray, weight: "black")[整合決策樹演算法解決計算瓶頸],
-    text(fill: gray)[提升模型穩定性與預測表現],
-    text(fill: gray, weight: "black")[精細化高效能TIP預報],
+    text(fill: gray)[Feature importance analysis],
+    text(fill: gray, weight: "black")[Integrate decision-tree algorithms],
+    text(fill: gray)[Improve model stability],
+    text(fill: gray, weight: "black")[Refine high-performance TIP forecasting],
   )
 
   #roadmap-diagram(
     items,
     highlight-at: items.len() - 2,
-    title: [本期工作內容 \ #text(size: 0.7em)[自相關分析：邁向TIPTree的前置處理]
+    title: [Current work \ #text(size: 0.7em)[Autocorrelation analysis: pre-processing towards TIPTree]
     ],
   )
 
   #roadmap-diagram(
     items_next,
     line-color: theme-color-configuration.colors.primary-light.lighten(50%),
-    title: [未來展望],
+    title: [Future outlooks],
   )
 
 ]
@@ -140,11 +140,11 @@
 #slide[
   #set text(size: 0.85em)
   #infobox(
-    title: [地磁站的資訊理論指標所揭示的時間相依結構],
+    title: [Temporal dependence structure revealed by information-theoretic indicators at geomagnetic stations],
     type: "danger",
   )[
-    - ACF/PACF 衰減快 #right-arrow-c #hlc[穩態]
-    - ACF/PACF 在 lag 27 出現超越95%信賴區間的「丘狀」特徵 #linebreak() #right-arrow-c #hlc[$tilde 27$ 天週期的季節性變化]
+    - ACF/PACF decay rapidly #right-arrow-c #hlc[Stationary]
+    - ACF/PACF show a "hump-like" feature exceeding the 95% confidence interval at lag 27 #linebreak() #right-arrow-c #hlc[~27-day periodic seasonal variation]
   ]
 
   #set align(center)
@@ -153,11 +153,11 @@
 
   #stack(
     simple-rect(alignment: left)[
-      🌔 月球的軌道(公轉)週期 $tilde 27.3$ days
+      🌔 Moon orbital (revolution) period $tilde 27.3$ days
       @guoqing273day136dayAtmospheric2005
     ],
     simple-rect(alignment: left)[
-      ☀️ 太陽的自轉週期 $tilde 27$ days
+      ☀️ Sun's rotation period $tilde 27$ days
       @bartelsTwentysevenDayRecurrences1934
       @beckComparisonDifferentialRotation2000
     ],
@@ -196,7 +196,7 @@
 
 #show: appendix
 
-#SECTION[= 附錄][
+#SECTION[= Appendices][
 
 
 ]
