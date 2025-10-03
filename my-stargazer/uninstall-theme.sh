@@ -50,8 +50,19 @@ fi
 link_name="$pkgver"
 link_path="$(pwd)/$link_name"
 
-rm -rv $link_path
-echo "Symlink uninstalled: $link_path"
-rm -rv $target_path
-echo "Source uninstalled: $target_path"
+# Remove the project symlink if it exists; otherwise print a notice.
+if [ -e "$link_path" ] || [ -L "$link_path" ]; then
+  rm -rv "$link_path"
+  echo "Symlink uninstalled: $link_path"
+else
+  echo "Notice: link '$link_path' does not exist; nothing to remove."
+fi
+
+# Remove the installed theme directory only if it exists; otherwise print a notice.
+if [ -d "$target_path" ]; then
+  rm -rv "$target_path"
+  echo "Source uninstalled: $target_path"
+else
+  echo "Notice: target directory '$target_path' does not exist; nothing to remove."
+fi
 
