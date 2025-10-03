@@ -1,0 +1,11 @@
+stages:
+  compile_slide:
+    # Crop image before typst compile
+    # cmd: julia --project=@. imagecrop.jl && typst compile slide.typ slide.pdf
+    cmd: typst compile slide.typ slide.pdf
+    deps:
+      - "assets"
+      - "slide.typ"
+      - "chapters/slide.typ"
+    outs:
+      - slide.pdf
