@@ -24,3 +24,14 @@ Referring: [okatsn/my-stargazer](https://github.com/okatsn/my-stargazer)
         ├── ...
 
 ```
+
+
+```bash
+pkgver="0.0.3"
+target_path=~/.local/share/typst/packages/local/my-stargazer/$pkgver
+mkdir -p "$target_path"
+git clone --branch $pkgver https://github.com/okatsn/my-stargazer.git "$target_path"
+# Create symlink to your development directory
+ln -s "$target_path" $(pwd)
+
+```
