@@ -24,32 +24,72 @@ THEME_REPO="okatsn/my-stargazer"
 
 # --- Script Logic ---
 
-# 1. Validate input argument for the version
-if [ -z "$1" ]; then
+# 1. Parse command-line arguments
+dev_mode=false
+pkgver=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --dev)
+      dev_mode=true
+      shift
+      ;;
+    *)
+      if [ -z "$pkgver" ]; then
+        pkgver="$1"
+      else
+        echo "Error: Unexpected argument '$1'" >&2
+        exit 1
+      fi
+      shift
+      ;;
+  esac
+done
+
+# 2. Validate that version was specified
+if [ -z "$pkgver" ]; then
   echo "Error: No version specified." >&2
-  echo "Usage: ./install-theme.sh <version>"
+  echo "Usage: ./install-theme.sh [--dev] <version>"
   echo "Example: ./install-theme.sh 0.0.3"
+  echo "Example (dev mode): ./install-theme.sh --dev 0.0.3"
   exit 1
 fi
-pkgver="$1"
 
-# 2. Define the standard Typst local package path
+# 3. Define the standard Typst local package path
 target_path="$HOME/.local/share/typst/packages/local/$THEME_NAMESPACE/$pkgver"
 
-# 3. Check if this version is already installed to prevent re-downloading
+# 4. Check if this version is already installed to prevent re-downloading
 if [ -d "$target_path" ]; then
   echo "✅ Theme '$THEME_NAMESPACE' version '$pkgver' is already installed."
   exit 0
 fi
 
-# 4. Install the theme using degit
-echo "🚀 Installing '$THEME_NAMESPACE' version '$pkgver'..."
+# 5. Install the theme
+if [ "$dev_mode" = true ]; then
+  echo "🚀 Installing '$THEME_NAMESPACE' version '$pkgver' in DEV mode..."
+else
+  echo "🚀 Installing '$THEME_NAMESPACE' version '$pkgver'..."
+fi
 echo "   from github.com/$THEME_REPO"
 echo "   to $target_path"
 
+
+
 # 'npx degit' clones a specific tag without the .git history.
 # It's lightweight and perfect for installing packages.
-npx degit "$THEME_REPO#$pkgver" "$target_path"
+# npx degit "$THEME_REPO#$pkgver" "$target_path"
+
+
+# Clone the repository with minimal history (depth=1) at the specific tag
+git clone --branch "$pkgver" "https://github.com/$THEME_REPO.git" "$target_path"
+
+# Remove the .git directory to save space (unless in dev mode)
+if [ "$dev_mode" = false ]; then
+  echo "   Removing .git directory (production mode)..."
+  yes | rm -rf "$target_path/.git"
+else
+  echo "   Keeping .git directory for development..."
+fi
 
 # Verify we're in the expected project directory before creating a link.
 # The script previously used `ln -s "$target_path" $(pwd)` which relies on
