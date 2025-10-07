@@ -60,7 +60,7 @@ fi
 
 # Remove the installed theme directory only if it exists; otherwise print a notice.
 if [ -d "$target_path" ]; then
-  rm -rv "$target_path"
+  yes | rm -rv "$target_path"
   echo "Source uninstalled: $target_path"
 else
   echo "Notice: target directory '$target_path' does not exist; nothing to remove."
