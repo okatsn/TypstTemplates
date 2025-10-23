@@ -96,7 +96,7 @@ fi
 # being in the project root and creates a link named after the basename of
 # the target. Make this explicit and safer by checking for required files and
 # handling existing links.
-if [ ! -d "src" ] || [ ! -d "chapters" ] || [ ! -f "config.typ" ]; then
+if [ ! -d "typst-src" ] || [ ! -d "chapters" ] || [ ! -f "config.typ" ]; then
   echo "Error: current directory $(pwd) does not appear to be a project root." >&2
   echo "It must contain: src/, chapters/, and config.typ" >&2
   exit 1
