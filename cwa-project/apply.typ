@@ -1,4 +1,4 @@
-#import "src/apply.typ" as src
+#import "typst-src/apply.typ" as src
 #import "chapters/apply.typ" as chapters
 #show: src.template
 

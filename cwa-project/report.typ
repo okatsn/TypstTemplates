@@ -1,4 +1,4 @@
-#import "src/report.typ" as src
+#import "typst-src/report.typ" as src
 #import "chapters/report.typ" as chapters
 #show: src.template
 

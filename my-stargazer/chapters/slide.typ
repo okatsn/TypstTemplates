@@ -1,4 +1,4 @@
-#import "../src/slide.typ": *
+#import "../typst-src/slide.typ": *
 
 #custom-title()
 

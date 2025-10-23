@@ -1,4 +1,4 @@
-#import "src/slide.typ": *
+#import "typst-src/slide.typ": *
 // TODO: Incorporate [20250903預設點位勘點報告_hjc.docx](https://docs.google.com/document/d/1azFPgwpDXMdzwSRguYvwUHGxoMTcQdjd/edit?usp=drive_link&ouid=105275981073763649718&rtpof=true&sd=true) into the slide
 
 #import "config.typ"
