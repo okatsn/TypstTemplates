@@ -1,11 +1,16 @@
-#import "../src/slide.typ": *
+#import "../typst-src/slide.typ": *
 
 #custom-title()
 
 #custom-outline()
 
 // Introduction
-#SECTION[= Timeline and Milestone][
+// A transition page with:
+#SECTION[
+  // Left: Section title
+  = Timeline and Milestone
+][
+  // Right: listed items (headers of subsections in this section)
   - Timeline
   - Milestone
 ]
@@ -16,6 +21,10 @@
 #slide[
   #set text(size: 0.6em)
   #let evtbxwidth = 5cm
+  // This is a horizontal timeline diagram where:
+  // - x ticks: the timestamps in `year`
+  // - an event points to a specific time point, showing a title adhere to a specific `year`.
+  // - an event span is a rectangular that spans from `start-point` to `end-point` in `year` with transparent background color. Showing a range of a "phase" or "stage".
   #timeline(
     interval: 1,
     startyear: 2016,
@@ -79,8 +88,10 @@
 
 == Milestone
 
-
+// This is a slide split into two panel, left and right.
+// `composer` defines the aspect ratio of left and right panel.
 #slide(composer: (2fr, 1.4fr))[
+  // left panel:
   #set text(size: 0.7em)
   #grid(
     columns: (1fr, 0.8fr),
@@ -105,6 +116,7 @@
   ]
 
 ][
+  // right panel:
   #set text(size: 0.7em)
 
   #let items = (
@@ -120,6 +132,10 @@
     text(fill: gray, weight: "black")[Refine high-performance TIP forecasting],
   )
 
+  // `roadmap-diagram` is a vertical timeline-like diagram.
+  // - takes `items` as an array of `text`.
+  // - you can assign a `title` for this diagram
+  // - use `highlight-at` to make the text of a specific item `strong`.
   #roadmap-diagram(
     items,
     highlight-at: items.len() - 2,

@@ -19,7 +19,7 @@ Referring: [okatsn/my-stargazer](https://github.com/okatsn/my-stargazer)
     ├── contents
     │   ├── ...
     │
-    └── src
+    └── typst-src
         ├── slide.typ
         ├── ...
 

@@ -1,4 +1,4 @@
-#import "../src/apply.typ" as src
+#import "../typst-src/apply.typ" as src
 
 #import "../contents/brief_summary.typ"
 #import "../contents/background_survey.typ"
