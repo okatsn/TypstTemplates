@@ -56,13 +56,17 @@
   #set heading(numbering: (..nums) => {
     let values = nums.pos()
     if values.len() == 1 {
-      // Level 1: Chinese numerals with 、
+      // Level 1: Chinese numerals with 、:
+      // - If there are 1 numbers => Level 1 heading
       numbering("一、", ..values)
     } else if values.len() == 2 {
-      // Level 2: Show as 3.1 (Arabic numerals)
+      // Level 2: Show as 3.1 (Arabic numerals):
+      // - If there are 2 numbers => Level 2 heading
       numbering("1.1", ..values)
     } else {
-      // Level 3 and beyond: Show full numbering
+      // Level 3 and beyond: Show full numbering:
+      // - If there are 3 or more numbers => Level 3 + headings
+      // - Example: `values = (3, 1, 2)` means Section 3, subsection 1 and sub-subsection 2
       numbering("1.1.1", ..values)
     }
   })
