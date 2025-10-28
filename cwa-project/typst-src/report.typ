@@ -25,7 +25,7 @@
     first-line-indent: 2em,
   )
 
-  #show heading.where(level: 2): it => [
+  #show heading.where(level: 1): it => [
     // Set top-level headers.
     #text(
       size: 16pt, // Larger size for emphasis
@@ -35,7 +35,7 @@
     )[#it]
   ]
 
-  #show heading.where(level: 3): it => [
+  #show heading.where(level: 2): it => [
     // Set top-level headers.
     #text(
       size: 14pt, // Larger size for emphasis
@@ -44,6 +44,28 @@
       // This is a hack since no available weight variant for `font: "AR PL UKai TW",`.
     )[#it]
   ]
+
+
+  // Configure heading styles to match the document with custom numbering
+  // Explain:
+  // - `(..nums) => {...}` is a function where `..num` takes any number of arguments.
+  // - `.pos()` extracts the actual numbers as an array. For example,
+  //   - for `= L1 Heading` `values` will be `(1, )`
+  //   - for `== L2 Heading` `values` will be `(1, 2)`
+  //   - for `=== L3 Heading` `values` will be `(1, 2, 3)`
+  #set heading(numbering: (..nums) => {
+    let values = nums.pos()
+    if values.len() == 1 {
+      // Level 1: Chinese numerals with 、
+      numbering("一、", ..values)
+    } else if values.len() == 2 {
+      // Level 2: Show as 3.1 (Arabic numerals)
+      numbering("1.1", ..values)
+    } else {
+      // Level 3 and beyond: Show full numbering
+      numbering("1.1.1", ..values)
+    }
+  })
 
   // #set heading(numbering: "1.a.") // Numbering heading: https://typst.app/docs/reference/model/heading/
 

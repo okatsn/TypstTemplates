@@ -2,18 +2,19 @@
 #import "chapters/report.typ" as chapters
 #show: src.template
 
+
+
 #src.abstract(chapters.abstract_zh, chapters.abstract_en)
 
-== 壹、前言
+= 前言
+#chapters.introduction
 
-=== (一)背景與研究概述
+= 資料與方法
 
-== 貳、資料與方法
+= 結果與討論
 
-== 參、結果與討論
+= 結論
 
-== 肆、結論
+= 參考文獻
 
-== 參考文獻
-
-== 圖表
+= 圖表
