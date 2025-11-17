@@ -31,11 +31,11 @@
     endyear: 2025,
     events: (
       event(
-        title: "MagTIP Algorithm",
+        title: "Milestone a in Event 2",
         year: 2019,
       ),
       event(
-        title: "MagTIP Probabilistic Forecasting Mode",
+        title: "Milestone a in Event 2",
         year: 2020,
       ),
       event(
@@ -57,21 +57,21 @@
     ),
     eventspans: (
       eventspan(
-        title: strong[GEMSTIP Algorithm],
+        title: strong[Span of Major Event 1],
         start-point: 2016,
         end-point: 2018,
         color: theme-color-configuration.colors.primary,
         box-width: evtbxwidth,
       ),
       eventspan(
-        title: strong[MagTIP Development Phase],
+        title: strong[Span of Major Event 2],
         start-point: 2019,
         end-point: 2022,
         color: theme-color-configuration.colors.quaternary-light,
         box-width: evtbxwidth,
       ),
       eventspan(
-        title: strong[System Integration and Analysis Phase],
+        title: strong[Span of Major Event 3],
         start-point: 2022,
         end-point: 2025,
         color: theme-color-configuration.colors.secondary,
@@ -110,9 +110,9 @@
     ],
   )
 
-  #simple-rect(subtitle: [DT-algorithm: Interpretable, extensible and efficient])[
+  #simple-rect(subtitle: [A supplementary description for the small information box])[
     #set text(weight: "bold", size: 1.1em)
-    The project introduces decision-tree algorithms to achieve efficient grid forecasting
+    The content of information
   ]
 
 ][
@@ -156,11 +156,10 @@
 #slide[
   #set text(size: 0.85em)
   #infobox(
-    title: [Temporal dependence structure revealed by information-theoretic indicators at geomagnetic stations],
+    title: [The title for the major information box],
     type: "danger",
   )[
-    - ACF/PACF decay rapidly #right-arrow-c #hlc[Stationary]
-    - ACF/PACF show a "hump-like" feature exceeding the 95% confidence interval at lag 27 #linebreak() #right-arrow-c #hlc[~27-day periodic seasonal variation]
+    - Key finding 1 #right-arrow-c #hlc[brief comment for this finding]
   ]
 
   #set align(center)
@@ -179,6 +178,37 @@
     ],
   )
 
+]
+
+== Step workflow
+
+#slide[
+  #step-workflow(
+    grid-columns: (1fr, 6fr),
+    title: [Analysis workflow],
+    [Step 1],
+    [
+      #let txt = [Compute QD/IQD on Taiwan catalog #linebreak() to produce stable trend]
+      #only("1")[#hla(txt)]
+      #only("2-")[#txt]
+    ],
+    [Step 2],
+    [
+      #let txt = [Construct time-lagged features #linebreak() from rainfall & solar flux]
+      #only("2")[#hlb(txt)]
+      #only("1,3-")[#txt]
+    ],
+    [Step 3],
+    [
+      #let txt = [ML validation with CART #linebreak() importance ranking]
+      #only("3")[#hlc(txt)]
+      #only("1-2,4")[#txt]
+    ],
+    [Key 4],
+    [description 4],
+    [Key 5],
+    [description 5],
+  )
 ]
 
 == Uncover
