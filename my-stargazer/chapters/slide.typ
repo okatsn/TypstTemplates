@@ -31,47 +31,47 @@
     endyear: 2025,
     events: (
       event(
-        title: "Milestone a in Event 2",
+        title: "Initial Research Framework",
         year: 2019,
       ),
       event(
-        title: "Milestone a in Event 2",
+        title: "Pilot Study Completion",
         year: 2020,
       ),
       event(
-        title: "Multivariate MagTIP Algorithm",
+        title: "Algorithm Development Phase",
         year: 2021,
       ),
       event(
-        title: "GEMS-MagTIP System Integration",
+        title: "System Integration",
         year: 2022,
       ),
       event(
-        title: "Study of Filter Band Effects",
+        title: "Parameter Optimization Study",
         year: 2023,
       ),
       event(
-        title: "Integration of Information Theory",
+        title: "Advanced Method Integration",
         year: 2024,
       ),
     ),
     eventspans: (
       eventspan(
-        title: strong[Span of Major Event 1],
+        title: strong[Foundation Phase],
         start-point: 2016,
         end-point: 2018,
         color: theme-color-configuration.colors.primary,
         box-width: evtbxwidth,
       ),
       eventspan(
-        title: strong[Span of Major Event 2],
+        title: strong[Development Phase],
         start-point: 2019,
         end-point: 2022,
         color: theme-color-configuration.colors.quaternary-light,
         box-width: evtbxwidth,
       ),
       eventspan(
-        title: strong[Span of Major Event 3],
+        title: strong[Integration and Refinement Phase],
         start-point: 2022,
         end-point: 2025,
         color: theme-color-configuration.colors.secondary,
@@ -97,16 +97,17 @@
     columns: (1fr, 0.8fr),
     gutter: 1em,
     [
-      *Station-centered limitations*
-      - A single station representing the whole $R_C$ range
-      - Uneven spatial forecasting
-      - Computational bottleneck of grid search
-      - Station coverage blind spots
+      *Approach A limitations*
+      - Limited scope of single point analysis
+      - Uneven spatial distribution
+      - Computational constraints
+      - Coverage gaps in dataset
     ],
     [
-      *Grid-centered advantages*
-      - Integration of multiple stations' data into a single grid cell
-      - Spatially uniform and fine-grained TIP forecasts
+      *Approach B advantages*
+      - Integration of multiple data sources
+      - Spatially uniform analysis
+      - Fine-grained resolution
     ],
   )
 
@@ -120,16 +121,16 @@
   #set text(size: 0.7em)
 
   #let items = (
-    text()[Handling missing values and outliers],
-    text()[ACF/PACF analysis],
-    text()[GM indicator #right-arrow-c #hlc[Feature engineering]],
+    text()[Data preprocessing and cleaning],
+    text()[Statistical analysis],
+    text()[Feature extraction #right-arrow-c #hlc[Feature engineering]],
     text(fill: gray)[Dimensionality reduction],
   )
   #let items_next = (
-    text(fill: gray)[Feature importance analysis],
-    text(fill: gray, weight: "black")[Integrate decision-tree algorithms],
-    text(fill: gray)[Improve model stability],
-    text(fill: gray, weight: "black")[Refine high-performance TIP forecasting],
+    text(fill: gray)[Model evaluation and validation],
+    text(fill: gray, weight: "black")[Advanced algorithm integration],
+    text(fill: gray)[Performance optimization],
+    text(fill: gray, weight: "black")[System refinement and deployment],
   )
 
   // `roadmap-diagram` is a vertical timeline-like diagram.
@@ -139,7 +140,7 @@
   #roadmap-diagram(
     items,
     highlight-at: items.len() - 2,
-    title: [Current work \ #text(size: 0.7em)[Autocorrelation analysis: pre-processing towards TIPTree]
+    title: [Current work \ #text(size: 0.7em)[Detailed subtitle describing current research focus]
     ],
   )
 
@@ -168,13 +169,10 @@
 
   #stack(
     simple-rect(alignment: left)[
-      🌔 Moon orbital (revolution) period $tilde 27.3$ days
-      @guoqing273day136dayAtmospheric2005
+      📊 Data source A: Description of first data type and its characteristics
     ],
     simple-rect(alignment: left)[
-      ☀️ Sun's rotation period $tilde 27$ days
-      @bartelsTwentysevenDayRecurrences1934
-      @beckComparisonDifferentialRotation2000
+      📈 Data source B: Description of second data type and its properties
     ],
   )
 
@@ -188,26 +186,26 @@
     title: [Analysis workflow],
     [Step 1],
     [
-      #let txt = [Compute QD/IQD on Taiwan catalog #linebreak() to produce stable trend]
+      #let txt = [Preprocess data #linebreak() to ensure quality and consistency]
       #only("1")[#hla(txt)]
       #only("2-")[#txt]
     ],
     [Step 2],
     [
-      #let txt = [Construct time-lagged features #linebreak() from rainfall & solar flux]
+      #let txt = [Extract and construct features #linebreak() from multiple data sources]
       #only("2")[#hlb(txt)]
       #only("1,3-")[#txt]
     ],
     [Step 3],
     [
-      #let txt = [ML validation with CART #linebreak() importance ranking]
+      #let txt = [Apply machine learning models #linebreak() with validation and ranking]
       #only("3")[#hlc(txt)]
       #only("1-2,4")[#txt]
     ],
-    [Key 4],
-    [description 4],
-    [Key 5],
-    [description 5],
+    [Step 4],
+    [Evaluate model performance and metrics],
+    [Step 5],
+    [Interpret results and draw conclusions],
   )
 ]
 
@@ -215,14 +213,14 @@
 
 #slide(repeat: 3)[
 
-  - item to show
+  - First point to introduce
 
   #uncover("2-")[
-    - item to show
+    - Second point revealed progressively
   ]
 
   #uncover("3-")[
-    - item to show
+    - Third point revealed last
   ]
 ]
 
