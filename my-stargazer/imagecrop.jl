@@ -5,9 +5,10 @@ using Pkg
 
 dir_project(args...) = joinpath(Pkg.project().path |> dirname, args...)
 
-image_crop_compile = YAML.load_file(dir_project("dvc.yaml"))["stages"]["compile_slide"]
+stagekeys = YAML.load_file(dir_project("dvc.yaml"))["stages"]
+# Extract dependencies from all `compile_slide*` stages
+deps = [v["deps"] for (k, v) in pairs(stagekeys) if occursin(r"^compile_slide", k)] |> (x -> reduce(vcat, x)) |> unique
 
-deps = image_crop_compile["deps"]
 depdir = isdir.(dir_project.(deps))
 depfile = .!depdir
 imgfile = occursin.(r"\.(png|jpg|jpeg|svg|bmp)\Z", deps)
