@@ -1,14 +1,15 @@
 #import "../typst-src/slide.typ": *
-
+#import "../config.typ"
 #custom-title()
 
 #custom-outline()
+
 
 // Introduction
 // A transition page with:
 #SECTION[
   // Left: Section title
-  = Timeline and Milestone
+  = #config.headers.sec1.full
 ][
   // Right: listed items (headers of subsections in this section)
   - Timeline
@@ -257,7 +258,7 @@
 
 #show: appendix
 
-#SECTION[= Appendices][
+#SECTION[= #config.headers.appendix.full][
 
 
 ]

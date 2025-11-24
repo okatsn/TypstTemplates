@@ -96,6 +96,18 @@
     tblock: _tblock,
   ),
   theme-color-configuration,
+  config-store(
+    // Override the navigation with custom one
+    navigation: self => my-simple-navigation(
+      self: self,
+      short-heading: true,
+      heading-map: config.heading-map, // Use custom map
+      primary: white,
+      secondary: gray,
+      background: self.colors.neutral-darkest,
+      logo: utils.call-or-display(self, self.store.header-right),
+    ),
+  ),
 )
 
 #set figure(numbering: none)
