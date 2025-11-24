@@ -1,4 +1,4 @@
-#import "../information/config.typ" as info
+#import "../config.typ"
 
 #let template(doc) = [
   #set text(
@@ -87,9 +87,9 @@
 #let abstract(
   content_zh,
   content_en,
-  keywords_zh: info.keywords_zh,
-  keywords_en: info.keywords_en,
-  title_zh: info.title_zh,
+  keywords_zh: config.keywords_zh,
+  keywords_en: config.keywords_en,
+  title_zh: config.title_zh,
 ) = [
 
   #txt18bc[#title_zh]
@@ -97,9 +97,9 @@
   #align(
     center,
     text(stroke: 0.2pt)[
-      #info.authors.join(" ")
+      #config.authors.join(" ")
       #linebreak()
-      #info.department
+      #config.department
 
     ],
   )
