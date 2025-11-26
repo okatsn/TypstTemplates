@@ -9,6 +9,10 @@ stages:
       - "chapters/slide.typ"
     outs:
       - slide.pdf
+  # CHECKPOINT: How to extract speaker note and compile a handout
+  # - Create a Julia/Python script to convert pdfpc to JSON file (e.g., `slide-note-export.jl`)
+  # - Read the JSON file in a typst script (e.g., `slide-notes-print.typ`)
+  # - Produce speak note handout, e.g.,  `typst compile slide-notes-print.typ slide-notes-print.pdf`
   speakernote-pdfpc:
     cmd: typst query --root . slide.typ --field value --one "<pdfpc-file>" > slide.pdfpc
     deps:
