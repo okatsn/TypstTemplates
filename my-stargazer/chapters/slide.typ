@@ -227,6 +227,10 @@
   )
 ]
 
+#speaker-note()[
+  This slide shows hoe to implement workflow visualization using `step-workflow`.
+]
+
 == Uncover
 
 #slide(repeat: 3)[
@@ -240,6 +244,10 @@
   #uncover("3-")[
     - Third point revealed last
   ]
+]
+
+#speaker-note()[
+  This slide shows how to uncover elements on the slide.
 ]
 
 

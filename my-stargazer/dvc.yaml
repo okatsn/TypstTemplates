@@ -9,3 +9,10 @@ stages:
       - "chapters/slide.typ"
     outs:
       - slide.pdf
+  speakernote-pdfpc:
+    cmd: typst query --root . slide.typ --field value --one "<pdfpc-file>" > slide.pdfpc
+    deps:
+      - "slide.typ"
+      - "chapters/slide.typ"
+    outs:
+      - "slide.pdfpc"
